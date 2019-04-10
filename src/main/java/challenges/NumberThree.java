@@ -24,7 +24,25 @@ public class NumberThree {
      * @return the string s in 24 hour format
      */
     public String timeConversion(String s) {
-        // Delete the line below and implement the method!
-        throw new UnsupportedOperationException();
+        if (s.contains( "AM"))
+        {
+            if (s.substring(0,2).equals("12"))
+            {
+                return "00" + s.substring(2,8);
+            }
+            return s.substring (0,8);
+        }
+        if (s.contains("PM"))
+        {
+            if (s.substring(0,2).equals ("12"))
+            {
+                return s.substring(0,8);
+            }
+            int x = Integer.parseInt(s.substring(0,2));
+            x+=12;
+            return x + s.substring (2,8);
+        }
+
+        return s.substring(0,8);
     }
 }

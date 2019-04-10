@@ -30,7 +30,7 @@ public class NumberTwo {
             big = a;
             medium = b;
             small = c;
-            if ((a-b) == (b-c))
+            if ((big-medium) == (medium-small))
             {
                 return true;
             }
@@ -48,16 +48,49 @@ public class NumberTwo {
 
         if ((b>c) && (b>a) && (c>a))
         {
-            big = a;
+            big = b;
             medium = c;
-            small = b;
-            if((big-medium)==(medium-big))
+            small = a;
+            if((big-medium)==(medium-small))
             {
                 return true;
             }
         }
-        //still have to do bac, cab and cba
+        if ((b>a) && (b>c) && (a>c))
+        {
+            big = b;
+            medium = a;
+            small = c;
+            if((big-medium)==(medium-small))
+            {
+                return true;
+            }
+        }
+        if ((c>a) && (c>b) && (a>b))
+        {
+            big = c;
+            medium = a;
+            small = b;
+            if((big-medium)==(medium-small))
+            {
+                return true;
+            }
+        }
+        if ((c>b) && (c>a) && (b>a))
+        {
+            big = c;
+            medium = b;
+            small = a;
+            if((big-medium)==(medium-small))
+            {
+                return true;
+            }
+        }
+        if (a == b && b == c)
+        {
+            return true;
+        }
 
-
+return false;
     }
 }
